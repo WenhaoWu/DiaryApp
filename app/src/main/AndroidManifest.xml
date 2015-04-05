@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.wenhaowu.diaryproject" >
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.example.UerSQliteHelper" />
+        <activity android:name=".add_Diary" />
+        <activity
+            android:name=".show_Diary"
+            android:label="@string/title_activity_show__diary" >
+        </activity>
+        <activity
+            android:name=".diary_entry"
+            android:label="@string/title_activity_diary_entry"
+            android:parentActivityName=".show_Diary" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wenhaowu.diaryproject.show_Diary" />
+        </activity>
+        <activity
+            android:name=".update_Diary"
+            android:label="@string/title_activity_update__diary"
+            android:parentActivityName=".show_Diary" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.wenhaowu.diaryproject.show_Diary" />
+        </activity>
+    </application>
+
+</manifest>

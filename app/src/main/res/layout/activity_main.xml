@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="@string/hello"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/abc_action_bar_default_height_material"/>
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/addButton"
+        android:text="@string/addButtonText"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"/>
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/showButton"
+        android:text="@string/showButtonText"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"/>/>
+
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/clearButton"
+        android:text="@string/clearButtonText"
+        android:layout_marginTop="200dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp"/>
+        />
+</LinearLayout>
