@@ -15,8 +15,8 @@ import android.widget.EditText;
 public class update_Diary extends show_Diary {
 
 
-    public String Updating_Title, Updating_Date, Updating_Content;
-    public int Updating_ID;
+    private String Updating_Title, Updating_Date, Updating_Content;
+    private int Updating_ID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

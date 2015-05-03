@@ -25,15 +25,17 @@ public class show_Diary extends ActionBarActivity {
 
     public static final int MAX_DIARY = 10;
 
-    public static UserSQliteHelper usdbh;
-    public SQLiteDatabase db;
-    public DiaryHolder[] DiaryData = new DiaryHolder[MAX_DIARY];
-  //  public ArrayList
-    public static String show_title, show_date, show_content;
-    public static int Diary_entry_ID, Diary_delete_ID;
-    public ListView lv;
-    public String ListItem;
-    public String sortArgs = null;
+    protected static UserSQliteHelper usdbh;
+    protected SQLiteDatabase db;
+
+    private ArrayList<DiaryHolder> DiaryList = new ArrayList<DiaryHolder>();
+
+    protected static String show_title, show_date, show_content;
+    protected static int Diary_entry_ID, Diary_delete_ID;
+
+    private ListView lv;
+    private String ListItem;
+    private String sortArgs = null;
     String[] CONTEXTMENU = {"Delete","Edit"};
 
     @Override
@@ -91,7 +93,7 @@ public class show_Diary extends ActionBarActivity {
 
         if (v.getId()==R.id.ID_DiaryList){
             AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo)menuInfo;
-            menu.setHeaderTitle(DiaryData[info.position].Diary_Title);
+            menu.setHeaderTitle(DiaryList.get(info.position).Diary_Title);
             menu.add(0,v.getId(),0, CONTEXTMENU[0]);
             menu.add(0,v.getId(),0, CONTEXTMENU[1]);
         }
@@ -102,7 +104,8 @@ public class show_Diary extends ActionBarActivity {
         AdapterView.AdapterContextMenuInfo info = (AdapterView.AdapterContextMenuInfo) item.getMenuInfo();
             if (item.getTitle()== CONTEXTMENU[0]){
                 diary_entry d = new diary_entry();
-                Diary_delete_ID = DiaryData[info.position].Diary_ID;
+
+                Diary_delete_ID = DiaryList.get(info.position).Diary_ID;
                 d.DeleteMethod();
                 jumpToActivity(MainActivity.class,null);
             }
@@ -112,7 +115,6 @@ public class show_Diary extends ActionBarActivity {
                 jumpToActivity(update_Diary.class,null);
             }
 
-        //return super.onContextItemSelected(item);
         return true;
 
 
@@ -134,8 +136,7 @@ public class show_Diary extends ActionBarActivity {
                 String Date = c.getString(2);
                 String Content = c.getString(3);
                 int ID = c.getInt(0);
-                DiaryData[i] = new DiaryHolder(ID,Title,Date,Content);
-
+                DiaryList.add( new DiaryHolder(ID,Title,Date,Content));
                 i++;
             }while (c.moveToNext());
         }//if ends
@@ -149,7 +150,7 @@ public class show_Diary extends ActionBarActivity {
         //Getting the Diary title list
         for (j=0; j<i; j++){
 
-            ListItem = DiaryData[j].Diary_Date +"    |    "+ DiaryData[j].Diary_Title;
+            ListItem = DiaryList.get(j).Diary_Date+"    |    "+ DiaryList.get(j).Diary_Title;
             Log.e("MyTag",ListItem);
             adapter.add(ListItem);
         }
@@ -176,10 +177,10 @@ public class show_Diary extends ActionBarActivity {
     }
 
     public void getShowDetail(int p){
-        show_title= DiaryData[p].Diary_Title;
-        show_date= DiaryData[p].Diary_Date;
-        show_content = DiaryData[p].Diary_Content;
-        Diary_entry_ID = DiaryData[p].Diary_ID;
+        show_title= DiaryList.get(p).Diary_Title;
+        show_date= DiaryList.get(p).Diary_Date;
+        show_content = DiaryList.get(p).Diary_Content;
+        Diary_entry_ID = DiaryList.get(p).Diary_ID;
     }
 }
 

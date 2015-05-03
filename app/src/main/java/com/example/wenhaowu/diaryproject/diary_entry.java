@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 public class diary_entry extends show_Diary {
 
-    public static int Deleting_ID =1;
-    public static String test = null;
+    private static int Deleting_ID =1;
+    private static String test = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +68,7 @@ public class diary_entry extends show_Diary {
     }
 
 
-    public void DeleteMethod(){
+    protected void DeleteMethod(){
 
         if (test == null){
             Deleting_ID = show_Diary.Diary_delete_ID;

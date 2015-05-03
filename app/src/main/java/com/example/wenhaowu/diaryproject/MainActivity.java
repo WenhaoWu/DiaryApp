@@ -16,8 +16,8 @@ import android.widget.Toast;
 
 public class MainActivity extends ActionBarActivity {
 
-    public static UserSQliteHelper usdbh;
-    public static SQLiteDatabase db;
+    private static UserSQliteHelper usdbh;
+    private static SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

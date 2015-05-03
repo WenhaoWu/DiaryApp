@@ -20,9 +20,9 @@ import java.util.Date;
 
 public class add_Diary extends ActionBarActivity {
 
-    public static UserSQliteHelper usdbh;
-    public static SQLiteDatabase db;
-    public int Adding_ID = 0; //ID For this adding diary
+    private static UserSQliteHelper usdbh;
+    private static SQLiteDatabase db;
+    private int Adding_ID = 0; //ID For this adding diary
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +66,7 @@ public class add_Diary extends ActionBarActivity {
 
                 db.close();
 
-                Toast.makeText(getBaseContext(),"Added a movie", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(),"Added a diary", Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent();
                 intent.setClass(getBaseContext(), MainActivity.class);
