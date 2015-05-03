@@ -29,7 +29,7 @@ public class add_Diary extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__diary);
 
-        usdbh = new UserSQliteHelper(add_Diary.this, "DBDiary", null,1);
+        usdbh = new UserSQliteHelper(add_Diary.this, "Diary", null,1);
         db = usdbh.getWritableDatabase();
 
         //Find the current sum of diaries

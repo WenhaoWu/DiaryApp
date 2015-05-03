@@ -119,7 +119,7 @@ public class show_Diary extends ActionBarActivity {
     }
 
     public void GetListView(){
-        usdbh = new UserSQliteHelper(show_Diary.this,"DBDiary",null,1);
+        usdbh = new UserSQliteHelper(show_Diary.this,"Diary",null,1);
         db = usdbh.getWritableDatabase();
 
         String test = db.rawQuery("SELECT COUNT(*) FROM Diary;",null).toString();

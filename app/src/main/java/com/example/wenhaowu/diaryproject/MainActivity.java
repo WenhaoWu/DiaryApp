@@ -75,7 +75,7 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void clearData(){
-        usdbh = new UserSQliteHelper(MainActivity.this, "DBDiary",null,1);
+        usdbh = new UserSQliteHelper(MainActivity.this, "Diary",null,1);
         db=usdbh.getWritableDatabase();
 
         db.execSQL("DELETE FROM Diary");
