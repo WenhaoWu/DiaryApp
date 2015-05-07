@@ -15,7 +15,7 @@ import android.widget.EditText;
 public class update_Diary extends show_Diary {
 
 
-    private String Updating_Title, Updating_Date, Updating_Content;
+    private String Updating_Title, Updating_Date, Updating_Content, Updating_Weather;
     private int Updating_ID;
 
     @Override
@@ -25,6 +25,7 @@ public class update_Diary extends show_Diary {
         Updating_Date = show_date;
         Updating_Content = show_content;
         Updating_ID = Diary_entry_ID;
+        Updating_Weather = show_Weather;
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_update__diary);
@@ -38,6 +39,9 @@ public class update_Diary extends show_Diary {
         EditText t2 = (EditText)findViewById(R.id.Edit_Content_Update);
         t2.setText(Updating_Content);
 
+        EditText t3 = (EditText)findViewById(R.id.Edit_update_weather);
+        t3.setText(Updating_Weather);
+
         Button b = (Button)findViewById(R.id.Update_Diary_OK);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -45,11 +49,13 @@ public class update_Diary extends show_Diary {
                 Updating_Title = ((EditText) findViewById(R.id.Edit_Title_Update)).getText().toString();
                 Updating_Date = ((EditText) findViewById(R.id.Edit_Date_Update)).getText().toString();
                 Updating_Content = ((EditText) findViewById(R.id.Edit_Content_Update)).getText().toString();
+                Updating_Weather = ((EditText)findViewById(R.id.Edit_update_weather)).getText().toString();
 
                 ContentValues newDiary = new ContentValues();
                 newDiary.put("Title", Updating_Title);
                 newDiary.put("Date", Updating_Date);
                 newDiary.put("Content",Updating_Content);
+                newDiary.put("Weather",Updating_Weather);
 
                 String where = "id=?";
                 String[] whereArgs = new String[]{String.valueOf(Updating_ID)};

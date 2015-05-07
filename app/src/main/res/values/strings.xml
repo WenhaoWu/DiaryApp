@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="diary_app_id">11111</string>
+
     <string name="app_name">DiaryProject</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
@@ -25,4 +27,5 @@
     <string name="updating_title"> %s </string>
     <string name="updating_date">%1$s</string>
     <string name="updating_content">%1$s</string>
+    <string name="menu_music">Background Music</string>
 </resources>

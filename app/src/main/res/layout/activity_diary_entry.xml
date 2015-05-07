@@ -21,6 +21,14 @@
         android:textStyle="bold" />
 
     <TextView
+        android:id="@+id/ID_DiaryWeather"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:padding="15dp"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
         android:id="@+id/ID_DiaryContent"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"

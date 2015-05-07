@@ -9,14 +9,16 @@ public class DiaryHolder {
     public String Diary_Title;
     public String Diary_Date;
     public String Diary_Content;
+    public String Diary_Weather;
 
     //constructor
 
 
-    public DiaryHolder(int diary_Id ,String diary_Title, String diary_Date, String diary_Content) {
+    public DiaryHolder(int diary_Id ,String diary_Title, String diary_Date, String diary_Content, String diary_Weather) {
         this.Diary_ID = diary_Id;
         this.Diary_Title = diary_Title;
         this.Diary_Date = diary_Date;
         this.Diary_Content = diary_Content;
+        this.Diary_Weather = diary_Weather;
     }
 }

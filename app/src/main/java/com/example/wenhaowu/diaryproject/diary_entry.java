@@ -29,7 +29,7 @@ public class diary_entry extends show_Diary {
         //Receiving Deleting ID from show_Diary activity
         Bundle args = getIntent().getExtras();
         Deleting_ID = args.getInt("Deleting_ID");
-        Log.e("MyTag","Deleting ID is "+ Deleting_ID);
+        Log.e("MyTag", "Deleting ID is " + Deleting_ID);
 
         TextView DiaryTitle = (TextView)findViewById(R.id.ID_DiaryTitle);
         DiaryTitle.setText(show_title);
@@ -40,6 +40,8 @@ public class diary_entry extends show_Diary {
         TextView DiaryContent = (TextView)findViewById(R.id.ID_DiaryContent);
         DiaryContent.setText(show_content);
 
+        TextView DiaryWeather = (TextView)findViewById(R.id.ID_DiaryWeather);
+        DiaryWeather.setText(show_Weather);
         //Delete Button
         Button button = (Button)findViewById(R.id.ID_DeleteButton);
         button.setOnClickListener(new View.OnClickListener() {

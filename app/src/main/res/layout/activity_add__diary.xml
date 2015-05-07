@@ -42,7 +42,21 @@
         android:textStyle="italic"
         android:id="@+id/Edit_Date"
         android:hint="@string/hint_date"/>
-    
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:text="Weather"/>
+    <EditText
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:inputType="text"
+        android:textStyle="italic"
+        android:id="@+id/Edit_weather"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" 
@@ -59,6 +73,8 @@
         android:textStyle="italic"
         android:id="@+id/Edit_Content"
         android:hint="@string/hint_content"  />
+
+
 
     <Button
         android:layout_width="wrap_content"

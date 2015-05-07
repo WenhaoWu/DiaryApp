@@ -14,8 +14,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONException;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.concurrent.ExecutionException;
 
 
 public class add_Diary extends ActionBarActivity {
@@ -29,7 +32,7 @@ public class add_Diary extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__diary);
 
-        usdbh = new UserSQliteHelper(add_Diary.this, "Diary", null,1);
+        usdbh = new UserSQliteHelper(add_Diary.this, "Diary", null,2);
         db = usdbh.getWritableDatabase();
 
         //Find the current sum of diaries
@@ -41,32 +44,55 @@ public class add_Diary extends ActionBarActivity {
         //set the current date for default
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
         String currentDate = sdf.format(new Date());
-        Log.e("MyTag","Here8 "+ currentDate);
+        Log.e("MyTag", "Here8 " + currentDate);
         EditText t =(EditText) findViewById(R.id.Edit_Date);
         t.setText(currentDate);
 
+        //set the current weather for default
+        JSONWeatherTask task = new JSONWeatherTask();
+        String temp = null;
+        try {
+            temp = task.execute("helsinki").get();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+        String currentWeather="";
+        try {
+             currentWeather = JSONWeatherTask.getWeather(temp);
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        Log.e("MyTag", "temp is "+currentWeather);
+        EditText t_weather = (EditText) findViewById(R.id.Edit_weather);
+        t_weather.setText(currentWeather);
+
+        //ok button
         Button addDiary = (Button)findViewById(R.id.Add_Diary_OK);
         addDiary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String newTitle = ((EditText)findViewById(R.id.Edit_Title)).getText().toString();
-                String newDate = ((EditText)findViewById(R.id.Edit_Date)).getText().toString();
-                String newContent = ((EditText)findViewById(R.id.Edit_Content)).getText().toString();
+                String newTitle = ((EditText) findViewById(R.id.Edit_Title)).getText().toString();
+                String newDate = ((EditText) findViewById(R.id.Edit_Date)).getText().toString();
+                String newContent = ((EditText) findViewById(R.id.Edit_Content)).getText().toString();
+                String newWeather = ((EditText)findViewById(R.id.Edit_weather)).getText().toString();
                 Adding_ID = Integer.parseInt(currentSum) + 1;
 
-                Log.e("MyTag","Here "+Adding_ID);
+                Log.e("MyTag", "Here " + Adding_ID);
 
                 ContentValues newDiary = new ContentValues();
                 newDiary.put("ID", Adding_ID);
-                newDiary.put("Title",newTitle);
-                newDiary.put("Date",newDate);
-                newDiary.put("Content",newContent);
+                newDiary.put("Title", newTitle);
+                newDiary.put("Date", newDate);
+                newDiary.put("Content", newContent);
+                newDiary.put("Weather",newWeather);
 
-                db.insert("Diary",null,newDiary);
+                db.insert("Diary", null, newDiary);
 
                 db.close();
 
-                Toast.makeText(getBaseContext(),"Added a diary", Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), "Added a diary", Toast.LENGTH_LONG).show();
 
                 Intent intent = new Intent();
                 intent.setClass(getBaseContext(), MainActivity.class);

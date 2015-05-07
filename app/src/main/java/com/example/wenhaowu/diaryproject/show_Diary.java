@@ -30,7 +30,7 @@ public class show_Diary extends ActionBarActivity {
 
     private ArrayList<DiaryHolder> DiaryList = new ArrayList<DiaryHolder>();
 
-    protected static String show_title, show_date, show_content;
+    protected static String show_title, show_date, show_content, show_Weather;
     protected static int Diary_entry_ID, Diary_delete_ID;
 
     private ListView lv;
@@ -121,12 +121,12 @@ public class show_Diary extends ActionBarActivity {
     }
 
     public void GetListView(){
-        usdbh = new UserSQliteHelper(show_Diary.this,"Diary",null,1);
+        usdbh = new UserSQliteHelper(show_Diary.this,"Diary",null,2);
         db = usdbh.getWritableDatabase();
 
         String test = db.rawQuery("SELECT COUNT(*) FROM Diary;",null).toString();
 
-        String[] fields = new String[]{"ID","Title","Date","Content"};
+        String[] fields = new String[]{"ID","Title","Date","Content", "Weather"};
         Cursor c = db.query("Diary",fields,null,null,null,null,sortArgs);
 
         int i=0, j;
@@ -135,8 +135,9 @@ public class show_Diary extends ActionBarActivity {
                 String Title = c.getString(1);
                 String Date = c.getString(2);
                 String Content = c.getString(3);
+                String Weather = c.getString(4);
                 int ID = c.getInt(0);
-                DiaryList.add( new DiaryHolder(ID,Title,Date,Content));
+                DiaryList.add( new DiaryHolder(ID,Title,Date,Content,Weather));
                 i++;
             }while (c.moveToNext());
         }//if ends
@@ -181,6 +182,7 @@ public class show_Diary extends ActionBarActivity {
         show_date= DiaryList.get(p).Diary_Date;
         show_content = DiaryList.get(p).Diary_Content;
         Diary_entry_ID = DiaryList.get(p).Diary_ID;
+        show_Weather = DiaryList.get(p).Diary_Weather;
     }
 }
 

@@ -11,7 +11,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
+import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.util.logging.Handler;
+import java.util.logging.LogRecord;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -60,22 +64,21 @@ public class MainActivity extends ActionBarActivity {
 
 
 
-    public void addDiary(){
+    private void addDiary(){
 
         Intent intent = new Intent();
         intent.setClass(getBaseContext(),add_Diary.class);
         startActivity(intent);
     }
 
-
-    public void showDiary(){
+    private void showDiary(){
         Intent intent = new Intent();
         intent.setClass(getBaseContext(),show_Diary.class);
         startActivity(intent);
     }
 
-    public void clearData(){
-        usdbh = new UserSQliteHelper(MainActivity.this, "Diary",null,1);
+    private void clearData(){
+        usdbh = new UserSQliteHelper(MainActivity.this, "Diary",null,2);
         db=usdbh.getWritableDatabase();
 
         db.execSQL("DELETE FROM Diary");
@@ -83,8 +86,6 @@ public class MainActivity extends ActionBarActivity {
 
         db.close();
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -99,11 +100,23 @@ public class MainActivity extends ActionBarActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
+        boolean music_flag = false;
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
+        else if(id== R.id.music){
+            Intent svc=new Intent(this, backgroundSound_Service.class);
+            if (music_flag == false){
+                startService(svc);
+                music_flag = true;
+            }
+            else if (music_flag == true){
+                stopService(svc);
+                music_flag = false;
+            }
+        }
+
 
         return super.onOptionsItemSelected(item);
     }

@@ -10,7 +10,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class UserSQliteHelper extends SQLiteOpenHelper{
 
 
-    private static final String createSQL ="CREATE TABLE Diary(ID INTEGER AUTO_INCREMENT PRiMARY KEY, Title TEXT, Date DATE, Content TEXT)";
+    private static final String createSQL ="CREATE TABLE Diary(ID INTEGER AUTO_INCREMENT PRiMARY KEY, Title TEXT, Date DATE, Weather TEXT, Content TEXT)";
 
 
     public UserSQliteHelper(Context context, String name, SQLiteDatabase.CursorFactory factory, int version){
