@@ -1,11 +1,16 @@
 package com.example.wenhaowu.diaryproject;
 
+import android.app.Activity;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.EditText;
+import android.widget.ImageView;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.lang.ref.WeakReference;
 
 /**
  * Created by wenhaowu on 07/05/15.
@@ -13,10 +18,18 @@ import org.json.JSONObject;
  * Got most of code from there
  */
 public class JSONWeatherTask extends AsyncTask<String, Void, String>{
+
+    private WeakReference<Activity> ActivityRef ;
+
+    public JSONWeatherTask(Activity activity){
+        ActivityRef = new WeakReference<Activity>(activity);
+    }
+
     @Override
     protected String doInBackground(String... params) {
         try {
             String data = (new RemoteFetch()).getWeatherData(params[0]);
+            Log.e("myTag", data);
             return data;
         }catch (Exception e){
             e.printStackTrace();
@@ -26,11 +39,20 @@ public class JSONWeatherTask extends AsyncTask<String, Void, String>{
 
     @Override
     protected void onPostExecute(String s) {
+
         super.onPostExecute(s);
+
+        String detail = "No Data";
         try {
-            getWeather(s);
+            detail = getWeather(s);
         } catch (JSONException e) {
             e.printStackTrace();
+        }
+
+        final Activity activity = ActivityRef.get();
+        if (activity != null){
+            EditText t_weather = (EditText) activity.findViewById(R.id.Edit_weather);
+            t_weather.setText(detail);
         }
 
     }

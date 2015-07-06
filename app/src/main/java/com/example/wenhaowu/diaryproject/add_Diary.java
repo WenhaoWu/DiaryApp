@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -27,10 +29,18 @@ public class add_Diary extends ActionBarActivity {
     private static SQLiteDatabase db;
     private int Adding_ID = 0; //ID For this adding diary
 
+    public add_Diary() {}
+
+    private ImageView imageView;
+    private JSONWeatherTask weatherTask;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__diary);
+
+        imageView = (ImageView)findViewById(R.id.image);
 
         usdbh = new UserSQliteHelper(add_Diary.this, "Diary", null,2);
         db = usdbh.getWritableDatabase();
@@ -47,26 +57,6 @@ public class add_Diary extends ActionBarActivity {
         Log.e("MyTag", "Here8 " + currentDate);
         EditText t =(EditText) findViewById(R.id.Edit_Date);
         t.setText(currentDate);
-
-        //set the current weather for default
-        JSONWeatherTask task = new JSONWeatherTask();
-        String temp = null;
-        try {
-            temp = task.execute("helsinki").get();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
-        String currentWeather="";
-        try {
-             currentWeather = JSONWeatherTask.getWeather(temp);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-        Log.e("MyTag", "temp is "+currentWeather);
-        EditText t_weather = (EditText) findViewById(R.id.Edit_weather);
-        t_weather.setText(currentWeather);
 
         //ok button
         Button addDiary = (Button)findViewById(R.id.Add_Diary_OK);
@@ -101,6 +91,24 @@ public class add_Diary extends ActionBarActivity {
         });
     }
 
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (weatherTask==null || weatherTask.getStatus()!= AsyncTask.Status.RUNNING){
+            weatherTask = new JSONWeatherTask(this);
+            weatherTask.execute("helsinki");
+
+        }
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if (weatherTask != null || weatherTask.getStatus()!=AsyncTask.Status.RUNNING){
+            weatherTask.cancel(true);
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {

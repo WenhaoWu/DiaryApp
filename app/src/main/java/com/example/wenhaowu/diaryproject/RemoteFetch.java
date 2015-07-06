@@ -18,48 +18,6 @@ import java.net.URL;
 public class RemoteFetch {
     private static final String OPEN_WEATHER_MAP_API =
             "http://api.openweathermap.org/data/2.5/weather?q=";
-    /*
-    public static JSONObject getJSON(String city){
-        try {
-            String temp = OPEN_WEATHER_MAP_API + city;
-            URL url = new URL(String.format(temp));
-
-            HttpURLConnection con =
-                    (HttpURLConnection)url.openConnection();
-            con.setRequestMethod("GET");
-            con.setDoInput(true);
-            con.setDoOutput(true);
-            //- See more at: http://www.survivingwithandroid.com/2013/05/build-weather-app-json-http-android.html#sthash.cTeZzSKY.dpuf
-            con.connect();
-
-            Log.e("MyTag", "test");
-            BufferedReader reader = new BufferedReader(
-                    new InputStreamReader(con.getInputStream()));
-
-            StringBuffer json = new StringBuffer(1024);
-
-            String tmp="";
-            while((tmp=reader.readLine())!=null)
-                json.append(tmp).append("\n");
-            reader.close();
-
-            JSONObject data = new JSONObject(json.toString());
-
-            // This value will be 404 if the request was not
-            // successful
-            if(data.getInt("cod") != 200){
-                return null;
-            }
-
-            return data;
-        }catch(Exception e){
-
-            Log.e("MyTag", "test22");
-
-            return null;
-        }
-    }
-    */
 
     public static String getWeatherData(String location) {
         HttpURLConnection con = null ;
@@ -67,7 +25,7 @@ public class RemoteFetch {
 
         try {
             String temp = OPEN_WEATHER_MAP_API + location;
-            Log.e("MyTag", temp);
+            Log.e("URL", temp);
             con = (HttpURLConnection) ( new URL(temp)).openConnection();
             con.setRequestMethod("GET");
             con.setDoInput(true);
@@ -84,6 +42,7 @@ public class RemoteFetch {
 
             is.close();
             con.disconnect();
+            Log.e("return", buffer.toString());
             return buffer.toString();
         }
         catch(Throwable t) {

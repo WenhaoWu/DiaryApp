@@ -2,53 +2,32 @@
 <items version="2" >
 
     <item
-        jar="/Users/wenhaowu/Desktop/DiaryApp-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
+        jar="/Users/wenhaowu/Desktop/DiaryApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/wenhaowu/Desktop/DiaryApp-master/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-4f3f77d4d417413dbe5a32a58c7db1ba27a897f1.jar" />
-    </item>
-    <item
-        jar="/Users/wenhaowu/AndroidstudioProjects/DiaryProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/libs/internal_impl-21.0.3.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="01ec05bfbafcc07646ba813000bf2ef11742dd03">
-        <dex dex="/Users/wenhaowu/AndroidstudioProjects/DiaryProject/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-64fd1bf7b871e699d6d776214efe3e46b7df59c6.jar" />
+        <dex dex="/Users/wenhaowu/Desktop/DiaryApp/app/build/intermediates/pre-dexed/debug/internal_impl-21.0.3-815c4c5f1c8d506ecba9c29cd5af6f96922183eb.jar" />
     </item>
     <item
         jar="/Users/wenhaowu/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="4b74cefe1f0c1b819e7260c8627a14674e37fd35">
-        <dex dex="/Users/wenhaowu/AndroidstudioProjects/DiaryProject/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-666c4ace0944ae888604f7778ae3645d36082538.jar" />
+        <dex dex="/Users/wenhaowu/Desktop/DiaryApp/app/build/intermediates/pre-dexed/debug/support-annotations-21.0.3-666c4ace0944ae888604f7778ae3645d36082538.jar" />
     </item>
     <item
-        jar="/Users/wenhaowu/Desktop/DiaryApp-master/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
+        jar="/Users/wenhaowu/Desktop/DiaryApp/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/wenhaowu/Desktop/DiaryApp-master/app/build/intermediates/pre-dexed/debug/classes-7650f2f57d6d0fb24362019e3caca4de0600ed59.jar" />
+        <dex dex="/Users/wenhaowu/Desktop/DiaryApp/app/build/intermediates/pre-dexed/debug/classes-29fa4f1c6c80960a9ccd4dd827d644c84a18645c.jar" />
     </item>
     <item
-        jar="/Users/wenhaowu/Desktop/DiaryApp-master/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
+        jar="/Users/wenhaowu/Desktop/DiaryApp/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
         jumboMode="false"
         revision="21.1.2"
         sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/wenhaowu/Desktop/DiaryApp-master/app/build/intermediates/pre-dexed/debug/classes-bdc63e9d76aa784510d67978d1c25fab2263afd4.jar" />
-    </item>
-    <item
-        jar="/Users/wenhaowu/AndroidstudioProjects/DiaryProject/app/build/intermediates/exploded-aar/com.android.support/support-v4/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="2c91c949a45a21cdecf26e03951e46c7beec9ad8">
-        <dex dex="/Users/wenhaowu/AndroidstudioProjects/DiaryProject/app/build/intermediates/pre-dexed/debug/classes-ca48a48b350cdad747ad435112881970fbbec48e.jar" />
-    </item>
-    <item
-        jar="/Users/wenhaowu/AndroidstudioProjects/DiaryProject/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/21.0.3/classes.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="81d42bf983a8741f4888a6e333e454e4a5e0eeb7">
-        <dex dex="/Users/wenhaowu/AndroidstudioProjects/DiaryProject/app/build/intermediates/pre-dexed/debug/classes-9d4426cfe0f1449b9f609712d166a26654be9888.jar" />
+        <dex dex="/Users/wenhaowu/Desktop/DiaryApp/app/build/intermediates/pre-dexed/debug/classes-3137cd0324f47388ad46d80a0608cd5a911056b6.jar" />
     </item>
 
 </items>
