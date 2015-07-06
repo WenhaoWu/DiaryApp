@@ -35,7 +35,7 @@ public class backgroundSound_Service extends Service{
     }
 
     public void onStop() {
-
+        player.stop();
     }
     public void onPause() {
 

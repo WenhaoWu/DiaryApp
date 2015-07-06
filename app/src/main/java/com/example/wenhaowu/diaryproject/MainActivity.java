@@ -115,6 +115,7 @@ public class MainActivity extends ActionBarActivity {
                 stopService(svc);
                 music_flag = false;
             }
+
         }
 
 
