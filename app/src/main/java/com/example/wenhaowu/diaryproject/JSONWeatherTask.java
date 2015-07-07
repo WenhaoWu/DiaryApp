@@ -1,10 +1,12 @@
 package com.example.wenhaowu.diaryproject;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.AsyncTask;
 import android.util.Log;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,12 +27,20 @@ public class JSONWeatherTask extends AsyncTask<String, Void, String>{
         ActivityRef = new WeakReference<Activity>(activity);
     }
 
+
+
     @Override
     protected String doInBackground(String... params) {
         try {
             String data = (new RemoteFetch()).getWeatherData(params[0]);
-            Log.e("myTag", data);
-            return data;
+            
+            if (data == null){
+                return "flag";
+            }else{
+                Log.e("myTag", data);
+                return data;
+            }
+
         }catch (Exception e){
             e.printStackTrace();
             throw e;
@@ -42,7 +52,7 @@ public class JSONWeatherTask extends AsyncTask<String, Void, String>{
 
         super.onPostExecute(s);
 
-        String detail = "No Data";
+        String detail = "";
         try {
             detail = getWeather(s);
         } catch (JSONException e) {
@@ -58,11 +68,16 @@ public class JSONWeatherTask extends AsyncTask<String, Void, String>{
     }
 
     public static String getWeather(String data) throws JSONException{
-        JSONObject jObj = new JSONObject(data);
-        JSONArray jArr = jObj.getJSONArray("weather");
-        JSONObject JSONWeather = jArr.getJSONObject(0);
-        String detail = JSONWeather.getString("description");
-        Log.e("MyTag", detail);
-        return detail;
+        if (data != "flag"){
+            JSONObject jObj = new JSONObject(data);
+            JSONArray jArr = jObj.getJSONArray("weather");
+            JSONObject JSONWeather = jArr.getJSONObject(0);
+            String detail = JSONWeather.getString("description");
+            Log.e("MyTag", detail);
+            return detail;
+        }
+        else{
+            return "No Data";
+        }
     }
 }
