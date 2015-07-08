@@ -28,12 +28,11 @@ public class JSONWeatherTask extends AsyncTask<String, Void, String>{
     }
 
 
-
     @Override
     protected String doInBackground(String... params) {
         try {
             String data = (new RemoteFetch()).getWeatherData(params[0]);
-            
+
             if (data == null){
                 return "flag";
             }else{
