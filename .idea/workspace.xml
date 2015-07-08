@@ -16,9 +16,21 @@
       </layout>
     </layouts>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="0b6babef-ab23-465a-9853-df439e559b99" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/JSONWeatherTask.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/JSONWeatherTask.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/cache.properties.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileHashes.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/fileSnapshots.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/outputFileStates.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" afterPath="$PROJECT_DIR$/.gradle/2.2.1/taskArtifacts/taskArtifacts.bin" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/add_Diary.java" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/add_Diary.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="DiaryApp.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,11 +51,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JSONWeatherTask.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JSONWeatherTask.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/JSONWeatherTask.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.62903225">
-              <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="18" column="118" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="118" />
               <folding />
             </state>
           </provider>
@@ -71,11 +83,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.31496063">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
               <folding>
                 <element signature="n#activity#0;n#application#0;n#manifest#0;n#!!top" expanded="false" />
                 <element signature="n#activity#2;n#application#0;n#manifest#0;n#!!top" expanded="false" />
@@ -86,16 +98,27 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="diary_entry.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/diary_entry.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="add_Diary.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/add_Diary.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
+              <caret line="25" column="80" selection-start-line="25" selection-start-column="80" selection-end-line="25" selection-end-column="80" />
               <folding>
-                <element signature="method#onCreate#0;class#add_Diary#0" expanded="false" />
+                <element signature="method#onStart#0;class#add_Diary#0" expanded="false" />
                 <element signature="method#onStop#0;class#add_Diary#0" expanded="false" />
                 <element signature="method#onCreateOptionsMenu#0;class#add_Diary#0" expanded="false" />
                 <element signature="method#onOptionsItemSelected#0;class#add_Diary#0" expanded="false" />
+                <element signature="method#onClick#0;class#add_Diary#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -163,17 +186,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="update_Diary.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/update_Diary.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="KEY_STORE_PATH" value="$PROJECT_DIR$/../AndroidApk/diary.jks" />
+    <option name="KEY_ALIAS" value="Testing" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -1296,12 +1313,12 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/RemoteFetch.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/add_Diary.java" />
         <option value="$PROJECT_DIR$/app/src/main/res/layout/activity_add__diary.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/backgroundSound_Service.java" />
-        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/JSONWeatherTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/add_Diary.java" />
+        <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
       </list>
     </option>
   </component>
@@ -1467,6 +1484,9 @@
     <property name="ANDROID_EXTENDED_DEVICE_CHOOSER_AVD" value="Nexus_5_API_21" />
     <property name="OverrideImplement.combined" value="true" />
     <property name="OverrideImplement.overriding.sorted" value="false" />
+    <property name="ExportApk.ApkPath" value="$PROJECT_DIR$/app" />
+    <property name="ExportApk.Flavors" value="" />
+    <property name="ExportApk.BuildType" value="release" />
   </component>
   <component name="RunManager" selected="Android Application.MainActivity">
     <configuration default="false" name="MainActivity" type="AndroidRunConfigurationType" factoryName="Android Application" temporary="true">
@@ -1721,8 +1741,8 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Build Variants" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24959612" sideWeight="0.5109034" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Gradle Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4449918" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32840723" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4449918" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32840723" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1789,10 +1809,11 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
           <folding>
-            <element signature="method#onCreate#0;class#add_Diary#0" expanded="false" />
+            <element signature="method#onStart#0;class#add_Diary#0" expanded="false" />
             <element signature="method#onStop#0;class#add_Diary#0" expanded="false" />
             <element signature="method#onCreateOptionsMenu#0;class#add_Diary#0" expanded="false" />
             <element signature="method#onOptionsItemSelected#0;class#add_Diary#0" expanded="false" />
+            <element signature="method#onClick#0;class#add_Diary#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1940,6 +1961,14 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="0" selection-start-line="84" selection-start-column="8" selection-end-line="85" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/backgroundSound_Service.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1954,45 +1983,46 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/add_Diary.java">
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/diary_entry.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="9" selection-start-line="100" selection-start-column="9" selection-end-line="100" selection-end-column="9" />
-          <folding>
-            <element signature="method#onCreate#0;class#add_Diary#0" expanded="false" />
-            <element signature="method#onStop#0;class#add_Diary#0" expanded="false" />
-            <element signature="method#onCreateOptionsMenu#0;class#add_Diary#0" expanded="false" />
-            <element signature="method#onOptionsItemSelected#0;class#add_Diary#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="47" column="0" selection-start-line="47" selection-start-column="0" selection-end-line="47" selection-end-column="0" />
-          <folding>
-            <element signature="n#activity#0;n#application#0;n#manifest#0;n#!!top" expanded="false" />
-            <element signature="n#activity#2;n#application#0;n#manifest#0;n#!!top" expanded="false" />
-            <element signature="n#activity#3;n#application#0;n#manifest#0;n#!!top" expanded="false" />
-            <element signature="n#activity#4;n#application#0;n#manifest#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="85" column="0" selection-start-line="84" selection-start-column="8" selection-end-line="85" selection-end-column="0" />
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/JSONWeatherTask.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.62903225">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="18" column="118" selection-start-line="18" selection-start-column="34" selection-end-line="18" selection-end-column="118" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/example/wenhaowu/diaryproject/add_Diary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="25" column="80" selection-start-line="25" selection-start-column="80" selection-end-line="25" selection-end-column="80" />
+          <folding>
+            <element signature="method#onStart#0;class#add_Diary#0" expanded="false" />
+            <element signature="method#onStop#0;class#add_Diary#0" expanded="false" />
+            <element signature="method#onCreateOptionsMenu#0;class#add_Diary#0" expanded="false" />
+            <element signature="method#onOptionsItemSelected#0;class#add_Diary#0" expanded="false" />
+            <element signature="method#onClick#0;class#add_Diary#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.31496063">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+          <folding>
+            <element signature="n#activity#0;n#application#0;n#manifest#0;n#!!top" expanded="false" />
+            <element signature="n#activity#2;n#application#0;n#manifest#0;n#!!top" expanded="false" />
+            <element signature="n#activity#3;n#application#0;n#manifest#0;n#!!top" expanded="false" />
+            <element signature="n#activity#4;n#application#0;n#manifest#0;n#!!top" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
