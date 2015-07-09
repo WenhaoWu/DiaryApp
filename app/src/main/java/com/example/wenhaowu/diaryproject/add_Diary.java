@@ -1,10 +1,16 @@
 package com.example.wenhaowu.diaryproject;
 
+import android.content.ContentResolver;
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.AsyncTask;
+import android.provider.Settings;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,17 +19,19 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-
+import android.widget.Toast;;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.location.LocationServices;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.ExecutionException;
-
-import static android.media.browse.MediaBrowser.*;
 
 
-public class add_Diary extends ActionBarActivity implements View.OnClickListener{
+public class add_Diary extends ActionBarActivity implements
+                                                    View.OnClickListener,
+                                                    GoogleApiClient.ConnectionCallbacks,
+                                                    GoogleApiClient.OnConnectionFailedListener{
 
     private static UserSQliteHelper usdbh;
     private static SQLiteDatabase db;
@@ -31,19 +39,22 @@ public class add_Diary extends ActionBarActivity implements View.OnClickListener
     private String currentSum;
 
     private JSONWeatherTask weatherTask;
+    private GoogleApiClient mgoogleApiClient;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add__diary);
 
-        usdbh = new UserSQliteHelper(add_Diary.this, "Diary", null,2);
-        db = usdbh.getWritableDatabase();
+
 
         //Find the current location
+        bulidGoogleApiClient();
 
 
         //Find the current sum of diaries
+        usdbh = new UserSQliteHelper(add_Diary.this, "Diary", null,2);
+        db = usdbh.getWritableDatabase();
         Cursor C = db.rawQuery("SELECT COUNT(ID) FROM Diary", null);
         C.moveToFirst();
         currentSum = C.getString(0);
@@ -63,6 +74,15 @@ public class add_Diary extends ActionBarActivity implements View.OnClickListener
 
     }
 
+    protected synchronized void bulidGoogleApiClient() {
+        mgoogleApiClient = new GoogleApiClient.Builder(this)
+                .addApi(LocationServices.API)
+                .addConnectionCallbacks(this)
+                .addOnConnectionFailedListener(this)
+                .build();
+
+    }
+
     @Override
     protected void onStart() {
         super.onStart();
@@ -71,6 +91,7 @@ public class add_Diary extends ActionBarActivity implements View.OnClickListener
             weatherTask.execute("helsinki");
         }
 
+        mgoogleApiClient.connect();
     }
 
     @Override
@@ -79,6 +100,8 @@ public class add_Diary extends ActionBarActivity implements View.OnClickListener
         if (weatherTask != null || weatherTask.getStatus()!=AsyncTask.Status.RUNNING){
             weatherTask.cancel(true);
         }
+
+        mgoogleApiClient.disconnect();
     }
 
     @Override
@@ -133,4 +156,24 @@ public class add_Diary extends ActionBarActivity implements View.OnClickListener
         intent.setClass(getBaseContext(), MainActivity.class);
         startActivity(intent);
     }
+
+
+    @Override
+    public void onConnected(Bundle bundle) {
+        Log.e("Mytag", "Google connect");
+        Location mlocation=  LocationServices.FusedLocationApi.getLastLocation(mgoogleApiClient);
+        Log.e("Location", mlocation.toString());
+    }
+
+    @Override
+    public void onConnectionSuspended(int i) {
+        Log.i("ConectionSus", "Connection suspended");
+        mgoogleApiClient.connect();
+    }
+
+    @Override
+    public void onConnectionFailed(ConnectionResult connectionResult) {
+        Log.i("ConnectionFailed", "Connection failed: ConnectionResult.getErrorCode() = " + connectionResult.getErrorCode());
+    }
+
 }
